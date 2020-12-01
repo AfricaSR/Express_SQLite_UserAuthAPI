@@ -6,7 +6,7 @@ require('dotenv/config');
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: process.env.CORS
 };
 
 app.use(cors(corsOptions));
@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to bezkoder application." });
+    res.json({ message: "Hello World!" });
 });
 
 const PORT = process.env.PORT;
